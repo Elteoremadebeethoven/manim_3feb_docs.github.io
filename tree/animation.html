@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Animations &mdash; Manim Feb/03/2019  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creation" href="animations/creation.html" />
+    <link rel="prev" title="SVGs and Images (TODO)" href="mobjects/svgs_images.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim Feb/03/2019
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manim_packages.html">Manim packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mobjects/mobjects.html">Mobject</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Animations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animations/creation.html">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html">Indication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html">Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/movement.html">Movement and Rotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rate-functions">Rate functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submobject-modes">Submobject modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scenes.html">Scenes (TODO)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim Feb/03/2019</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Animations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tree/animation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="animations">
+<h1>Animations<a class="headerlink" href="#animations" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="manimlib.animation.animation.Animation">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.animation.</code><code class="sig-name descname">Animation</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.animation.Animation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Mobject</strong> (<a class="reference internal" href="mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;run_time&quot;</span><span class="p">:</span> <span class="n">DEFAULT_ANIMATION_RUN_TIME</span><span class="p">,</span> <span class="c1"># 2 seconds</span>
+<span class="s2">&quot;rate_func&quot;</span><span class="p">:</span> <span class="n">smooth</span><span class="p">,</span>  <span class="c1"># See Rate functions below</span>
+<span class="s2">&quot;submobject_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;all_at_once&quot;</span><span class="p">,</span>
+<span class="s2">&quot;lag_factor&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="animations/creation.html">Creation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animations/creation.html#draw">Draw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/creation.html#fade">Fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/creation.html#grow">Grow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="animations/indication.html">Indication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#focus-on">Focus On</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#indicate">Indicate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#flash">Flash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#circle-indicate">Circle Indicate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#show-passing-flash">Show Passing Flash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#show-creation-then-destruction">Show Creation Then Destruction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#show-creation-then-fade-out">Show Creation Then Fade Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#animation-on-surrounding-rectangle">Animation On Surrounding Rectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#show-passing-flash-around">Show Passing Flash Around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#show-creation-then-destruction-around">Show Creation Then Destruction Around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#show-creation-then-fade-around">Show Creation Then Fade Around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#apply-wave">Apply Wave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#wiggle-out-thenin">Wiggle Out ThenIn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/indication.html#turn-inside-out">Turn Inside Out</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="animations/transform.html">Transformations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#replacement-transform">Replacement Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#transform-from-copy">Transform From Copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#clockwise-transform">Clockwise Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#counterclockwise-transform">Counterclockwise Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#move-to-target">Move To Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#apply-method">Apply Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#apply-pointwise-function">Apply Pointwise Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#fade-to-color">Fade To Color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#scale-in-place">Scale In Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#restore">Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#apply-function">Apply Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#complex-function">Complex Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#cyclic-replace">Cyclic Replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/transform.html#transform-animations">Transform Animations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="animations/movement.html">Movement and Rotations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animations/movement.html#homotopy">Homotopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/movement.html#complex-homotopy">Complex Homotopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/movement.html#phase-flow">Phase Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/movement.html#move-along-path">Move Along Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/movement.html#rotating">Rotating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animations/movement.html#rotate">Rotate</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="rate-functions">
+<h2>Rate functions<a class="headerlink" href="#rate-functions" title="Permalink to this headline">¶</a></h2>
+<p>See</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manimlib</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">rate_functions</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span>
+
+<span class="k">def</span> <span class="nf">smooth</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">inflection</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="o">-</span><span class="n">inflection</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">inflection</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">))</span> <span class="o">-</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">error</span><span class="p">),</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rush_into</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">inflection</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rush_from</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">inflection</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">slow_into</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">double_smooth</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">smooth</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">there_and_back</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">inflection</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="n">new_t</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">new_t</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">there_and_back_with_pause</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pause_ratio</span><span class="o">=</span><span class="mf">1.</span> <span class="o">/</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">pause_ratio</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="n">pause_ratio</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">pause_ratio</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">running_start</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pull_factor</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">bezier</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pull_factor</span><span class="p">,</span> <span class="n">pull_factor</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">not_quite_there</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">smooth</span><span class="p">,</span> <span class="n">proportion</span><span class="o">=</span><span class="mf">0.7</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">proportion</span> <span class="o">*</span> <span class="n">func</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">wiggle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">wiggles</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">there_and_back</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">wiggles</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">squish_rate_func</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.6</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">a</span>
+
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">((</span><span class="n">t</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">lingering</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">squish_rate_func</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">exponential_decay</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">half_life</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="c1"># The half-life should be rather small to minimize</span>
+    <span class="c1"># the cut-off error at the end</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="n">half_life</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="submobject-modes">
+<h2>Submobject modes<a class="headerlink" href="#submobject-modes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;lagged_start&quot;</span>
+<span class="s2">&quot;smoothed_lagged_start&quot;</span>
+<span class="s2">&quot;one_at_a_time&quot;</span>
+<span class="s2">&quot;all_at_once&quot;</span>
+</pre></div>
+</div>
+<p>See <code class="docutils literal notranslate"><span class="pre">get_sub_alpha</span></code> from:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manimlib</span><span class="o">/</span><span class="n">animation</span><span class="o">/</span><span class="n">animation</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_sub_alpha</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">num_submobjects</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">submobject_mode</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;lagged_start&quot;</span><span class="p">,</span> <span class="s2">&quot;smoothed_lagged_start&quot;</span><span class="p">]:</span>
+            <span class="n">prop</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_submobjects</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">submobject_mode</span> <span class="ow">is</span> <span class="s2">&quot;smoothed_lagged_start&quot;</span><span class="p">:</span>
+                <span class="n">prop</span> <span class="o">=</span> <span class="n">smooth</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+            <span class="n">lf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lag_factor</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">lf</span> <span class="o">*</span> <span class="n">alpha</span> <span class="o">-</span> <span class="p">(</span><span class="n">lf</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">prop</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">submobject_mode</span> <span class="o">==</span> <span class="s2">&quot;one_at_a_time&quot;</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_submobjects</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_submobjects</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">((</span><span class="n">alpha</span> <span class="o">-</span> <span class="n">lower</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">upper</span> <span class="o">-</span> <span class="n">lower</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">submobject_mode</span> <span class="o">==</span> <span class="s2">&quot;all_at_once&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">alpha</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Invalid submobject mode&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="tree">
+<h2>Tree<a class="headerlink" href="#tree" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── AnimationGroup
+│   ├── AnimationOnSurroundingRectangle
+│   │   ├── ShowCreationThenDestructionAround
+│   │   ├── ShowCreationThenFadeAround
+│   │   └── ShowPassingFlashAround
+│   └── Flash
+├── ApplyToCenters
+├── ChangingDecimal
+│   └── ChangeDecimalToValue
+├── DrawBorderThenFill
+│   └── Write
+├── EmptyAnimation
+├── Homotopy
+│   ├── ApplyWave
+│   ├── ComplexHomotopy
+│   └── SmoothedVectorizedHomotopy
+├── LaggedStart
+├── MaintainPositionRelativeTo
+├── MoveAlongPath
+├── PhaseFlow
+├── Rotating
+├── ShowIncreasingSubsets
+├── ShowPartial
+│   ├── ShowCreation
+│   │   └── Uncreate
+│   └── ShowPassingFlash
+│       └── ShowCreationThenDestruction
+├── Succession
+│   └── ShowCreationThenFadeOut
+├── Transform
+│   ├── FadeIn
+│   ├── FadeInAndShiftFromDirection
+│   │   └── FadeInFromDown
+│   ├── FadeInFromLarge
+│   ├── FadeOut
+│   │   └── FadeOutAndShift
+│   │       └── FadeOutAndShiftDown
+│   ├── FocusOn
+│   ├── GrowFromPoint
+│   │   ├── GrowArrow
+│   │   ├── GrowFromCenter
+│   │   │   └── SpinInFromNothing
+│   │   └── GrowFromEdge
+│   ├── Indicate
+│   │   └── CircleIndicate
+│   ├── Rotate
+│   ├── ShrinkToCenter
+│   └── TurnInsideOut
+├── UpdateFromAlphaFunc
+├── UpdateFromFunc
+├── VFadeIn
+├── Vibrate
+└── WiggleOutThenIn
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="animations/creation.html" class="btn btn-neutral float-right" title="Creation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mobjects/svgs_images.html" class="btn btn-neutral float-left" title="SVGs and Images (TODO)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

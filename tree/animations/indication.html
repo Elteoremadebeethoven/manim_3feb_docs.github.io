@@ -1,0 +1,779 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Indication &mdash; Manim Feb/03/2019  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Transformations" href="transform.html" />
+    <link rel="prev" title="Creation" href="creation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Manim Feb/03/2019
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_packages.html">Manim packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobjects/mobjects.html">Mobject</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../animation.html">Animations</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="creation.html">Creation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Indication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#focus-on">Focus On</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indicate">Indicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flash">Flash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circle-indicate">Circle Indicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-passing-flash">Show Passing Flash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-creation-then-destruction">Show Creation Then Destruction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-creation-then-fade-out">Show Creation Then Fade Out</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-on-surrounding-rectangle">Animation On Surrounding Rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-passing-flash-around">Show Passing Flash Around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-creation-then-destruction-around">Show Creation Then Destruction Around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-creation-then-fade-around">Show Creation Then Fade Around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apply-wave">Apply Wave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wiggle-out-thenin">Wiggle Out ThenIn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#turn-inside-out">Turn Inside Out</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="movement.html">Movement and Rotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation.html#rate-functions">Rate functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation.html#submobject-modes">Submobject modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation.html#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenes.html">Scenes (TODO)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Manim Feb/03/2019</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../animation.html">Animations</a> &raquo;</li>
+        
+      <li>Indication</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tree/animations/indication.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="indication">
+<h1>Indication<a class="headerlink" href="#indication" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="focus-on">
+<h2>Focus On<a class="headerlink" href="#focus-on" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.FocusOn">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">FocusOn</code><span class="sig-paren">(</span><em class="sig-param">mobject_or_point</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.FocusOn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Transform</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject_or_point</strong> (<em>Mobject/3D array</em>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+<span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">GREY</span><span class="p">,</span>
+<span class="s2">&quot;run_time&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="s2">&quot;remover&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/FocusOnExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FocusOnExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+            <span class="n">Dot</span><span class="p">(),</span>
+            <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">mobject_or_coord</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="o">*</span><span class="n">mobjects</span><span class="p">,</span>                    <span class="c1"># Mobjects: Dot and &quot;x&quot;</span>
+            <span class="n">mobjects</span><span class="o">.</span><span class="n">get_right</span><span class="p">()</span><span class="o">+</span><span class="n">RIGHT</span><span class="o">*</span><span class="mi">2</span>  <span class="c1"># Coord</span>
+        <span class="p">]</span>
+
+        <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="n">GRAY</span><span class="p">,</span><span class="n">RED</span><span class="p">,</span><span class="n">BLUE</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">obj</span><span class="p">,</span><span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">mobject_or_coord</span><span class="p">,</span><span class="n">colors</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FocusOn</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indicate">
+<h2>Indicate<a class="headerlink" href="#indicate" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.Indicate">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">Indicate</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.Indicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Transform</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;rate_func&quot;</span><span class="p">:</span> <span class="n">there_and_back</span><span class="p">,</span>
+<span class="s2">&quot;scale_factor&quot;</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span>
+<span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">YELLOW</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/IndicateExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">IndicateExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#                     0    1   2</span>
+        <span class="n">formula</span> <span class="o">=</span> <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;f(&quot;</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
+        <span class="n">dot</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span>
+
+        <span class="n">VGroup</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span><span class="n">dot</span><span class="p">)</span>\
+                           <span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>\
+                           <span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span><span class="n">dot</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="p">[</span><span class="n">formula</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">dot</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Indicate</span><span class="p">(</span><span class="n">mob</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flash">
+<h2>Flash<a class="headerlink" href="#flash" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.Flash">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">Flash</code><span class="sig-paren">(</span><em class="sig-param">point</em>, <em class="sig-param">color='#FFFF00'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.Flash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">AnimationGroup</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> (<em>3D array/Mobject</em>) -- 3D array or Mobject</p></li>
+<li><p><strong>color</strong> (<em>Hexadecimal</em>) -- TODO</p></li>
+</ul>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;line_length&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+<span class="s2">&quot;num_lines&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+<span class="s2">&quot;flash_radius&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+<span class="s2">&quot;line_stroke_width&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/FlashExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FlashExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+            <span class="n">Dot</span><span class="p">(),</span>
+            <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">mobject_or_coord</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="o">*</span><span class="n">mobjects</span><span class="p">,</span>                    <span class="c1"># Mobjects: Dot and &quot;x&quot;</span>
+            <span class="n">mobjects</span><span class="o">.</span><span class="n">get_right</span><span class="p">()</span><span class="o">+</span><span class="n">RIGHT</span><span class="o">*</span><span class="mi">2</span>  <span class="c1"># Coord</span>
+        <span class="p">]</span>
+
+        <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="n">GRAY</span><span class="p">,</span><span class="n">RED</span><span class="p">,</span><span class="n">BLUE</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">obj</span><span class="p">,</span><span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">mobject_or_coord</span><span class="p">,</span><span class="n">colors</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Flash</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">flash_radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="circle-indicate">
+<h2>Circle Indicate<a class="headerlink" href="#circle-indicate" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.CircleIndicate">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">CircleIndicate</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.CircleIndicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Indicate</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;rate_func&quot;</span><span class="p">:</span> <span class="n">squish_rate_func</span><span class="p">(</span><span class="n">there_and_back</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span>
+<span class="s2">&quot;remover&quot;</span><span class="p">:</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/CircleIndicateExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CircleIndicateExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+            <span class="n">Dot</span><span class="p">(),</span>
+            <span class="n">TexMobject</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">CircleIndicate</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-passing-flash">
+<h2>Show Passing Flash<a class="headerlink" href="#show-passing-flash" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.ShowPassingFlash">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">ShowPassingFlash</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.ShowPassingFlash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class</p>
+<p>Type: <code class="docutils literal notranslate"><span class="pre">ShowPartial</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;time_width&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+<span class="s2">&quot;remover&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="show-creation-then-destruction">
+<h2>Show Creation Then Destruction<a class="headerlink" href="#show-creation-then-destruction" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.ShowCreationThenDestruction">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">ShowCreationThenDestruction</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.ShowCreationThenDestruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">ShowPassingFlash</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;time_width&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+<span class="s2">&quot;run_time&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/ShowCreationThenDestructionExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShowCreationThenDestructionExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">ShowCreationThenDestruction</span><span class="p">(</span><span class="n">mob</span><span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-creation-then-fade-out">
+<h2>Show Creation Then Fade Out<a class="headerlink" href="#show-creation-then-fade-out" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.ShowCreationThenFadeOut">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">ShowCreationThenFadeOut</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.ShowCreationThenFadeOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Succession</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;remover&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/ShowCreationThenFadeOutExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShowCreationThenFadeOutExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">ShowCreationThenFadeOut</span><span class="p">(</span><span class="n">mob</span><span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-on-surrounding-rectangle">
+<h2>Animation On Surrounding Rectangle<a class="headerlink" href="#animation-on-surrounding-rectangle" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.AnimationOnSurroundingRectangle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">AnimationOnSurroundingRectangle</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.AnimationOnSurroundingRectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class</p>
+<p>Type: <code class="docutils literal notranslate"><span class="pre">AnimationGroup</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;surrounding_rectangle_config&quot;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="c1"># Function which takes in a rectangle, and spits</span>
+<span class="c1"># out some animation.  Could be some animation class,</span>
+<span class="c1"># could be something more</span>
+<span class="s2">&quot;rect_to_animation&quot;</span><span class="p">:</span> <span class="n">Animation</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="show-passing-flash-around">
+<h2>Show Passing Flash Around<a class="headerlink" href="#show-passing-flash-around" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.ShowPassingFlashAround">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">ShowPassingFlashAround</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.ShowPassingFlashAround" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">AnimationOnSurroundingRectangle</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;rect_to_animation&quot;</span><span class="p">:</span> <span class="n">ShowPassingFlash</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/ShowPassingFlashAroundExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShowPassingFlashAroundExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">ShowPassingFlashAround</span><span class="p">(</span><span class="n">mob</span><span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-creation-then-destruction-around">
+<h2>Show Creation Then Destruction Around<a class="headerlink" href="#show-creation-then-destruction-around" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.ShowCreationThenDestructionAround">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">ShowCreationThenDestructionAround</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.ShowCreationThenDestructionAround" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">AnimationOnSurroundingRectangle</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;rect_to_animation&quot;</span><span class="p">:</span> <span class="n">ShowCreationThenDestruction</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/ShowCreationThenDestructionAroundExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShowCreationThenDestructionAroundExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">ShowCreationThenDestructionAround</span><span class="p">(</span><span class="n">mob</span><span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-creation-then-fade-around">
+<h2>Show Creation Then Fade Around<a class="headerlink" href="#show-creation-then-fade-around" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.ShowCreationThenFadeAround">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">ShowCreationThenFadeAround</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.ShowCreationThenFadeAround" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">AnimationOnSurroundingRectangle</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;rect_to_animation&quot;</span><span class="p">:</span> <span class="n">ShowCreationThenFadeOut</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/ShowCreationThenFadeAroundExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShowCreationThenFadeAroundExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">ShowCreationThenFadeAround</span><span class="p">(</span><span class="n">mob</span><span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apply-wave">
+<h2>Apply Wave<a class="headerlink" href="#apply-wave" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.ApplyWave">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">ApplyWave</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.ApplyWave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Homotopy</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;direction&quot;</span><span class="p">:</span> <span class="n">UP</span><span class="p">,</span>
+<span class="s2">&quot;amplitude&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+<span class="s2">&quot;run_time&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/ApplyWaveExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ApplyWaveExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">ApplyWave</span><span class="p">(</span><span class="n">mob</span><span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wiggle-out-thenin">
+<h2>Wiggle Out ThenIn<a class="headerlink" href="#wiggle-out-thenin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.WiggleOutThenIn">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">WiggleOutThenIn</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.WiggleOutThenIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Animation</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;scale_value&quot;</span><span class="p">:</span> <span class="mf">1.1</span><span class="p">,</span>
+<span class="s2">&quot;rotation_angle&quot;</span><span class="p">:</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">TAU</span><span class="p">,</span>
+<span class="s2">&quot;n_wiggles&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+<span class="s2">&quot;run_time&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="s2">&quot;scale_about_point&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;rotate_about_point&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/WiggleOutThenInExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">WiggleOutThenInExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">WiggleOutThenIn</span><span class="p">(</span><span class="n">mob</span><span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="turn-inside-out">
+<h2>Turn Inside Out<a class="headerlink" href="#turn-inside-out" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.indication.TurnInsideOut">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.indication.</code><code class="sig-name descname">TurnInsideOut</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.indication.TurnInsideOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Transform</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;path_arc&quot;</span><span class="p">:</span> <span class="n">TAU</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/TurnInsideOutExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TurnInsideOutExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mobjects</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">mobjects</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">TurnInsideOut</span><span class="p">(</span><span class="n">mob</span><span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transform.html" class="btn btn-neutral float-right" title="Transformations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="creation.html" class="btn btn-neutral float-left" title="Creation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TeX and Text &mdash; Manim Feb/03/2019  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Geometric objects" href="geometric.html" />
+    <link rel="prev" title="Mobject" href="mobjects.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Manim Feb/03/2019
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_packages.html">Manim packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants.html">Constants</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mobjects.html">Mobject</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TeX and Text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#texmobject">TexMobject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#textmobject">TextMobject</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="geometric.html">Geometric objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coord_system.html">Coordinate system (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brace.html">Brace (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_line_and_plane.html">Number line and Number plane (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="value_tracker.html">Value Tracker (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decimal_numbers.html">Decimal numbers and Integers (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Functions (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svgs_images.html">SVGs and Images (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobjects.html#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../animation.html">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenes.html">Scenes (TODO)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Manim Feb/03/2019</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="mobjects.html">Mobject</a> &raquo;</li>
+        
+      <li>TeX and Text</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tree/mobjects/tex.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tex-and-text">
+<h1>TeX and Text<a class="headerlink" href="#tex-and-text" title="Permalink to this headline">¶</a></h1>
+<p>There are two commands to create text, <code class="docutils literal notranslate"><span class="pre">TexMobject</span></code> and <code class="docutils literal notranslate"><span class="pre">TextMobject</span></code>. In both parameters the text is written in TeX format, but while in <code class="docutils literal notranslate"><span class="pre">TextMobject</span></code> you write in normal mode, in <code class="docutils literal notranslate"><span class="pre">TexMobject</span></code> you are writing within the <code class="docutils literal notranslate"><span class="pre">align*</span></code> environment.</p>
+<p>The LaTeX packages that Manim uses are in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manimlib</span><span class="o">/</span><span class="n">tex_template</span><span class="o">.</span><span class="n">tex</span>
+</pre></div>
+</div>
+<p>They are the following by default:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">[</span><span class="n">english</span><span class="p">]{</span><span class="n">babel</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">amsmath</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">amssymb</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">dsfont</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">setspace</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">tipa</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">relsize</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">textcomp</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">mathrsfs</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">calligra</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">wasysym</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">ragged2e</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">physics</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">xcolor</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">textcomp</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">microtype</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="texmobject">
+<h2>TexMobject<a class="headerlink" href="#texmobject" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.mobject.svg.tex_mobject.TexMobject">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.svg.tex_mobject.</code><code class="sig-name descname">TexMobject</code><span class="sig-paren">(</span><em class="sig-param">*tex_strings</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.svg.tex_mobject.TexMobject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write formulas in TeX mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*tex_strings</strong> (<em>string</em>) -- Formula in TeX code</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;template_tex_file_body&quot;</span><span class="p">:</span> <span class="n">TEMPLATE_TEX_FILE_BODY</span><span class="p">,</span>
+<span class="s2">&quot;stroke_width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;fill_opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="s2">&quot;background_stroke_width&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;background_stroke_color&quot;</span><span class="p">:</span> <span class="n">BLACK</span><span class="p">,</span>
+<span class="s2">&quot;arg_separator&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span>
+<span class="s2">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.svg.tex_mobject.TexMobject.get_tex_string">
+<code class="sig-prename descclassname">TexMobject.</code><code class="sig-name descname">get_tex_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.svg.tex_mobject.TexMobject.get_tex_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return TeX code</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.svg.tex_mobject.TexMobject.set_color_by_tex">
+<code class="sig-prename descclassname">TexMobject.</code><code class="sig-name descname">set_color_by_tex</code><span class="sig-paren">(</span><em class="sig-param">tex</em>, <em class="sig-param">color</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.svg.tex_mobject.TexMobject.set_color_by_tex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the color by specifying the TeX symbol</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case of <code class="docutils literal notranslate"><span class="pre">TexMobject</span></code> it does not work if the radical symbol is used. In case you use indexes and superscripts, write the superscript first.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">x^i_j</span></code></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="textmobject">
+<h2>TextMobject<a class="headerlink" href="#textmobject" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.mobject.svg.tex_mobject.TextMobject">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.svg.tex_mobject.</code><code class="sig-name descname">TextMobject</code><span class="sig-paren">(</span><em class="sig-param">*tex_strings</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.svg.tex_mobject.TextMobject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write texts in TeX mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*tex_strings</strong> (<em>string</em>) -- Text in TeX code</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;template_tex_file_body&quot;</span><span class="p">:</span> <span class="n">TEMPLATE_TEXT_FILE_BODY</span><span class="p">,</span>
+<span class="s2">&quot;stroke_width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;fill_opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="s2">&quot;background_stroke_width&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;background_stroke_color&quot;</span><span class="p">:</span> <span class="n">BLACK</span><span class="p">,</span>
+<span class="s2">&quot;arg_separator&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span>
+<span class="s2">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;\centering&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.svg.tex_mobject.TextMobject.get_tex_string">
+<code class="sig-prename descclassname">TextMobject.</code><code class="sig-name descname">get_tex_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.svg.tex_mobject.TextMobject.get_tex_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return TeX code</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.svg.tex_mobject.TextMobject.set_color_by_tex">
+<code class="sig-prename descclassname">TextMobject.</code><code class="sig-name descname">set_color_by_tex</code><span class="sig-paren">(</span><em class="sig-param">tex</em>, <em class="sig-param">color</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.svg.tex_mobject.TextMobject.set_color_by_tex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the color by specifying the TeX symbol</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case of <code class="docutils literal notranslate"><span class="pre">TexMobject</span></code> it does not work if the radical symbol is used. In case you use indexes and superscripts, write the superscript first.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">x^i_j</span></code></p>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="geometric.html" class="btn btn-neutral float-right" title="Geometric objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mobjects.html" class="btn btn-neutral float-left" title="Mobject" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

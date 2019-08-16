@@ -1,0 +1,902 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Geometric objects &mdash; Manim Feb/03/2019  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Coordinate system (TODO)" href="coord_system.html" />
+    <link rel="prev" title="TeX and Text" href="tex.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Manim Feb/03/2019
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_packages.html">Manim packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants.html">Constants</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mobjects.html">Mobject</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tex.html">TeX and Text</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Geometric objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arc-types">Arc types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arc">Arc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcbetweenpoints">ArcBetweenPoints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#curvedarrow">CurvedArrow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#curveddoublearrow">CurvedDoubleArrow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#circle">Circle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dot">Dot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ellipse">Ellipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annularsector">AnnularSector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sector">Sector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annulus">Annulus</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#line-types">Line types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#line">Line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dashedline">DashedLine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#elbow">Elbow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arrow">Arrow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#doublearrow">DoubleArrow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vector">Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cubicbezier">CubicBezier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rectangle-types">Rectangle types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#polygon">Polygon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#regularpolygon">RegularPolygon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rectangle">Rectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roundedrectangle">RoundedRectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid">Grid</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coord_system.html">Coordinate system (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brace.html">Brace (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_line_and_plane.html">Number line and Number plane (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="value_tracker.html">Value Tracker (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decimal_numbers.html">Decimal numbers and Integers (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Functions (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svgs_images.html">SVGs and Images (TODO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobjects.html#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../animation.html">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenes.html">Scenes (TODO)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Manim Feb/03/2019</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="mobjects.html">Mobject</a> &raquo;</li>
+        
+      <li>Geometric objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tree/mobjects/geometric.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geometric-objects">
+<h1>Geometric objects<a class="headerlink" href="#geometric-objects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="arc-types">
+<h2>Arc types<a class="headerlink" href="#arc-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="arc">
+<h3>Arc<a class="headerlink" href="#arc" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Arc">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Arc</code><span class="sig-paren">(</span><em class="sig-param">angle</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle</strong> (<em>float</em>) -- Angle of arc</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="s2">&quot;start_angle&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;arc_center&quot;</span><span class="p">:</span> <span class="n">ORIGIN</span><span class="p">,</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Arc.add_tip">
+<code class="sig-name descname">add_tip</code><span class="sig-paren">(</span><em class="sig-param">tip_length=0.25</em>, <em class="sig-param">at_start=False</em>, <em class="sig-param">at_end=True</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.add_tip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add tip</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Arc.get_arc_center">
+<code class="sig-name descname">get_arc_center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.get_arc_center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get arc center</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Arc center</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Arc.move_arc_center_to">
+<code class="sig-name descname">move_arc_center_to</code><span class="sig-paren">(</span><em class="sig-param">point</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.move_arc_center_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move arc center to point</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="arcbetweenpoints">
+<h3>ArcBetweenPoints<a class="headerlink" href="#arcbetweenpoints" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.ArcBetweenPoints">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">ArcBetweenPoints</code><span class="sig-paren">(</span><em class="sig-param">start_point</em>, <em class="sig-param">end_point</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.ArcBetweenPoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Arc</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_point</strong><strong>,</strong><strong>end_point</strong> (<em>3D array</em>) -- Points</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) -- TAU/4 by default</p></li>
+</ul>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters: The same as <code class="docutils literal notranslate"><span class="pre">Arc</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="curvedarrow">
+<h3>CurvedArrow<a class="headerlink" href="#curvedarrow" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.CurvedArrow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CurvedArrow</code><span class="sig-paren">(</span><em class="sig-param">start_point</em>, <em class="sig-param">end_point</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CurvedArrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">ArcBetweenPoints</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters: The same as <code class="docutils literal notranslate"><span class="pre">ArcBetweenPoints</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="curveddoublearrow">
+<h3>CurvedDoubleArrow<a class="headerlink" href="#curveddoublearrow" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.CurvedDoubleArrow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CurvedDoubleArrow</code><span class="sig-paren">(</span><em class="sig-param">start_point</em>, <em class="sig-param">end_point</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CurvedDoubleArrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">ArcBetweenPoints</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters: The same as <code class="docutils literal notranslate"><span class="pre">ArcBetweenPoints</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="circle">
+<h3>Circle<a class="headerlink" href="#circle" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Circle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Circle</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Arc</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">RED</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Circle.get_point_from_angle">
+<code class="sig-name descname">get_point_from_angle</code><span class="sig-paren">(</span><em class="sig-param">angle</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Circle.get_point_from_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get point from angle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Point of angle</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="dot">
+<h3>Dot<a class="headerlink" href="#dot" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Dot">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Dot</code><span class="sig-paren">(</span><em class="sig-param">point=array([0.</em>, <em class="sig-param">0.</em>, <em class="sig-param">0.])</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Circle</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<em>3D array</em>) -- Position</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">0.08</span><span class="p">,</span>
+<span class="s2">&quot;stroke_width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;fill_opacity&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ellipse">
+<h3>Ellipse<a class="headerlink" href="#ellipse" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Ellipse">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Ellipse</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Ellipse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="annularsector">
+<h3>AnnularSector<a class="headerlink" href="#annularsector" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.AnnularSector">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">AnnularSector</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;inner_radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;outer_radius&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="s2">&quot;angle&quot;</span><span class="p">:</span> <span class="n">TAU</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span>
+<span class="s2">&quot;start_angle&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;fill_opacity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;stroke_width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span><span class="p">,</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="manimlib.mobject.geometry.AnnularSector.get_arc_center">
+<code class="sig-name descname">get_arc_center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector.get_arc_center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get arc center</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.AnnularSector.move_arc_center_to">
+<code class="sig-name descname">move_arc_center_to</code><span class="sig-paren">(</span><em class="sig-param">point</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector.move_arc_center_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move arc center to point</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sector">
+<h3>Sector<a class="headerlink" href="#sector" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Sector">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Sector</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Sector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">AnnularSector</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;outer_radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;inner_radius&quot;</span><span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="annulus">
+<h3>Annulus<a class="headerlink" href="#annulus" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Annulus">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Annulus</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Annulus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Circle</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;inner_radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;outer_radius&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="s2">&quot;fill_opacity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;stroke_width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="line-types">
+<h2>Line types<a class="headerlink" href="#line-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="line">
+<h3>Line<a class="headerlink" href="#line" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Line">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Line</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>start</strong><strong>,</strong><strong>end</strong> (<em>3D array</em>) -- Points of the line</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;buff&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;path_arc&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># angle of arc specified here</span>
+<span class="s2">&quot;n_arc_anchors&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1"># Only used if path_arc is not None</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.get_angle">
+<code class="sig-name descname">get_angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get angle taking the horizontal as a reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Angle</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.get_arc_length">
+<code class="sig-name descname">get_arc_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_arc_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get arc length</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Arc length</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only works if <code class="docutils literal notranslate"><span class="pre">path_arc</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.get_end">
+<code class="sig-name descname">get_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get end</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Point</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.get_length">
+<code class="sig-name descname">get_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get length</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Lenght of the line</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.get_start">
+<code class="sig-name descname">get_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get start</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Point</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.get_start_and_end">
+<code class="sig-name descname">get_start_and_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_start_and_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get start and end of the line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>Start of the line</strong> (<em>3D array</em>)</p></li>
+<li><p><strong>End of the line</strong> (<em>3D array</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.get_unit_vector">
+<code class="sig-name descname">get_unit_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_unit_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get unit vector of the line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Unit vector</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.get_vector">
+<code class="sig-name descname">get_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get vector with the length of the line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Vector</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.put_start_and_end_on">
+<code class="sig-name descname">put_start_and_end_on</code><span class="sig-paren">(</span><em class="sig-param">new_start</em>, <em class="sig-param">new_end</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.put_start_and_end_on" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put start and end on new points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.set_angle">
+<code class="sig-name descname">set_angle</code><span class="sig-paren">(</span><em class="sig-param">angle</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.set_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set angle taking the horizontal as a reference</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Line.set_start_and_end">
+<code class="sig-name descname">set_start_and_end</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.set_start_and_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set start and end</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="dashedline">
+<h3>DashedLine<a class="headerlink" href="#dashedline" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.DashedLine">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">DashedLine</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DashedLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Line</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dashed_segment_length&quot;</span><span class="p">:</span> <span class="mf">0.05</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="manimlib.mobject.geometry.DashedLine.get_end">
+<code class="sig-name descname">get_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DashedLine.get_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get end</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Point</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.DashedLine.get_start">
+<code class="sig-name descname">get_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DashedLine.get_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get start</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Point</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="elbow">
+<h3>Elbow<a class="headerlink" href="#elbow" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Elbow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Elbow</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Elbow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+<span class="s2">&quot;angle&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="arrow">
+<h3>Arrow<a class="headerlink" href="#arrow" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Arrow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Arrow</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Line</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;tip_length&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+<span class="s2">&quot;tip_width_to_length_ratio&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;max_tip_length_to_length_ratio&quot;</span><span class="p">:</span> <span class="mf">0.35</span><span class="p">,</span>
+<span class="s2">&quot;max_stem_width_to_tip_width_ratio&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+<span class="s2">&quot;buff&quot;</span><span class="p">:</span> <span class="n">MED_SMALL_BUFF</span><span class="p">,</span>
+<span class="s2">&quot;propagate_style_to_family&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="s2">&quot;preserve_tip_size_when_scaling&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="s2">&quot;normal_vector&quot;</span><span class="p">:</span> <span class="n">OUT</span><span class="p">,</span>
+<span class="s2">&quot;use_rectangular_stem&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="s2">&quot;rectangular_stem_width&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Arrow.get_end">
+<code class="sig-name descname">get_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.get_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get end</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Point</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Arrow.get_normal_vector">
+<code class="sig-name descname">get_normal_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.get_normal_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get normal vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Normal vector</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Arrow.get_tip">
+<code class="sig-name descname">get_tip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.get_tip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get tip</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Tip</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>VMobject</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Arrow.put_start_and_end_on">
+<code class="sig-name descname">put_start_and_end_on</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.put_start_and_end_on" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put start and end in new points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Arrow.scale">
+<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param">scale_factor</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale without change tip size</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="doublearrow">
+<h3>DoubleArrow<a class="headerlink" href="#doublearrow" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.DoubleArrow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">DoubleArrow</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DoubleArrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Arrow</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="vector">
+<h3>Vector<a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Vector">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Vector</code><span class="sig-paren">(</span><em class="sig-param">direction</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Arrow</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>direction</strong> (<em>3D array</em>) -- Vector is: <code class="docutils literal notranslate"><span class="pre">Arrow(ORIGIN,direction)</span></code></p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">YELLOW</span><span class="p">,</span>
+<span class="s2">&quot;buff&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="cubicbezier">
+<h3>CubicBezier<a class="headerlink" href="#cubicbezier" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.CubicBezier">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CubicBezier</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CubicBezier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>list of arrays</em>) -- Bezier using list of arrays</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="rectangle-types">
+<h2>Rectangle types<a class="headerlink" href="#rectangle-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="polygon">
+<h3>Polygon<a class="headerlink" href="#polygon" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Polygon">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Polygon</code><span class="sig-paren">(</span><em class="sig-param">*vertices</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*vertices</strong> (<em>list of 3D arrays</em>) -- Vertices of the poligon as list</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">GREEN_D</span><span class="p">,</span>
+<span class="s2">&quot;mark_paths_closed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="s2">&quot;close_new_points&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="manimlib.mobject.geometry.Polygon.get_vertices">
+<code class="sig-name descname">get_vertices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Polygon.get_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get vertices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>List of points</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List of 3D arrays</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="regularpolygon">
+<h3>RegularPolygon<a class="headerlink" href="#regularpolygon" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.RegularPolygon">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">RegularPolygon</code><span class="sig-paren">(</span><em class="sig-param">n=3</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.RegularPolygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Polygon</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) -- Number of sides</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;start_angle&quot;</span><span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="rectangle">
+<h3>Rectangle<a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Rectangle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Rectangle</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span><span class="p">,</span>
+<span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+<span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span>
+<span class="s2">&quot;mark_paths_closed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="s2">&quot;close_new_points&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="roundedrectangle">
+<h3>RoundedRectangle<a class="headerlink" href="#roundedrectangle" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.RoundedRectangle">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">RoundedRectangle</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.RoundedRectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;corner_radius&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+<span class="s2">&quot;close_new_points&quot;</span><span class="p">:</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="grid">
+<h3>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="manimlib.mobject.geometry.Grid">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Grid</code><span class="sig-paren">(</span><em class="sig-param">rows</em>, <em class="sig-param">columns</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rows</strong><strong>,</strong><strong>columns</strong> (<em>int</em>) -- Grid of ROWS x COLUMNS</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">,</span>
+<span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="coord_system.html" class="btn btn-neutral float-right" title="Coordinate system (TODO)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tex.html" class="btn btn-neutral float-left" title="TeX and Text" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

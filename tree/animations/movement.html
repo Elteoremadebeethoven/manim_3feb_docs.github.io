@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Movement and Rotations &mdash; Manim Feb/03/2019  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Scenes (TODO)" href="../scenes.html" />
+    <link rel="prev" title="Transformations" href="transform.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Manim Feb/03/2019
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manim_packages.html">Manim packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobjects/mobjects.html">Mobject</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../animation.html">Animations</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="creation.html">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indication.html">Indication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">Transformations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Movement and Rotations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#homotopy">Homotopy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#complex-homotopy">Complex Homotopy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-flow">Phase Flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#move-along-path">Move Along Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotating">Rotating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotate">Rotate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../animation.html#rate-functions">Rate functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation.html#submobject-modes">Submobject modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation.html#tree">Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenes.html">Scenes (TODO)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Manim Feb/03/2019</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../animation.html">Animations</a> &raquo;</li>
+        
+      <li>Movement and Rotations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tree/animations/movement.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="movement-and-rotations">
+<h1>Movement and Rotations<a class="headerlink" href="#movement-and-rotations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="homotopy">
+<h2>Homotopy<a class="headerlink" href="#homotopy" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.movement.Homotopy">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.movement.</code><code class="sig-name descname">Homotopy</code><span class="sig-paren">(</span><em class="sig-param">homotopy</em>, <em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.movement.Homotopy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Homotopy a function from (x, y, z, t) to (x', y', z')</p>
+<p>Type: <code class="docutils literal notranslate"><span class="pre">Animation</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>homotopy</strong> (<em>Function</em>) -- (x,y,z,t)</p></li>
+<li><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p></li>
+</ul>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;run_time&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="s2">&quot;apply_function_kwargs&quot;</span><span class="p">:</span> <span class="p">{},</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/HomotopyExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HomotopyExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">plane_wave_homotopy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+            <span class="n">norm</span> <span class="o">=</span> <span class="n">get_norm</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+            <span class="n">tau</span> <span class="o">=</span> <span class="n">interpolate</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">norm</span><span class="o">/</span><span class="n">FRAME_X_RADIUS</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">alpha</span><span class="p">)</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="n">SMALL_BUFF</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="p">]</span>
+
+        <span class="n">mobjects</span><span class="o">=</span><span class="n">VGroup</span><span class="p">(</span>
+            <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">Square</span><span class="p">(),</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mobjects</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">Homotopy</span><span class="p">(</span>
+                <span class="n">plane_wave_homotopy</span><span class="p">,</span>
+                <span class="n">mob</span>
+            <span class="p">)</span> <span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="complex-homotopy">
+<h2>Complex Homotopy<a class="headerlink" href="#complex-homotopy" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.movement.ComplexHomotopy">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.movement.</code><code class="sig-name descname">ComplexHomotopy</code><span class="sig-paren">(</span><em class="sig-param">complex_homotopy</em>, <em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.movement.ComplexHomotopy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Complex Hootopy a function Cx[0, 1] to C</p>
+<p>Type: <code class="docutils literal notranslate"><span class="pre">Homotopy</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>homotopy</strong> (<em>Function</em>) -- (real,im,t)</p></li>
+<li><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="phase-flow">
+<h2>Phase Flow<a class="headerlink" href="#phase-flow" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.movement.PhaseFlow">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.movement.</code><code class="sig-name descname">PhaseFlow</code><span class="sig-paren">(</span><em class="sig-param">function</em>, <em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.movement.PhaseFlow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Animation</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> (<em>Function</em>) -- TODO</p></li>
+<li><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p></li>
+</ul>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;virtual_time&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;rate_func&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/PhaseFlowExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PhaseFlowExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">t</span><span class="o">*</span><span class="mf">0.5</span><span class="o">*</span><span class="n">RIGHT</span>
+
+        <span class="n">mobjects</span><span class="o">=</span><span class="n">VGroup</span><span class="p">(</span>
+            <span class="n">TextMobject</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">Square</span><span class="p">(),</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">arrange_submobjects</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">PhaseFlow</span><span class="p">(</span>
+                <span class="n">func</span><span class="p">,</span> <span class="n">mob</span><span class="p">,</span>
+                <span class="n">run_time</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="p">)</span><span class="k">for</span> <span class="n">mob</span> <span class="ow">in</span> <span class="n">mobjects</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="move-along-path">
+<h2>Move Along Path<a class="headerlink" href="#move-along-path" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.movement.MoveAlongPath">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.movement.</code><code class="sig-name descname">MoveAlongPath</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">path</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.movement.MoveAlongPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Animation</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p></li>
+<li><p><strong>path</strong> (<em>Path</em>) -- TODO</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/MoveAlongPathExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoveAlongPathExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">line</span><span class="o">=</span><span class="n">Line</span><span class="p">(</span><span class="n">ORIGIN</span><span class="p">,</span><span class="n">RIGHT</span><span class="o">*</span><span class="n">FRAME_WIDTH</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">ORIGIN</span><span class="p">)</span>
+        <span class="n">dot</span><span class="o">=</span><span class="n">Dot</span><span class="p">()</span>
+        <span class="n">dot</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">get_start</span><span class="p">())</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">dot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">MoveAlongPath</span><span class="p">(</span><span class="n">dot</span><span class="p">,</span><span class="n">line</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rotating">
+<h2>Rotating<a class="headerlink" href="#rotating" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.rotation.Rotating">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.rotation.</code><code class="sig-name descname">Rotating</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.rotation.Rotating" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Animation</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;axis&quot;</span><span class="p">:</span> <span class="n">OUT</span><span class="p">,</span>
+<span class="s2">&quot;radians&quot;</span><span class="p">:</span> <span class="n">TAU</span><span class="p">,</span>
+<span class="s2">&quot;run_time&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="s2">&quot;rate_func&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;in_place&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="s2">&quot;about_point&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;about_edge&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/RotatingExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RotatingExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">square</span><span class="o">=</span><span class="n">Square</span><span class="p">()</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Rotating</span><span class="p">(</span>
+                <span class="n">square</span><span class="p">,</span>
+                <span class="n">radians</span><span class="o">=</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span>
+                <span class="n">run_time</span><span class="o">=</span><span class="mi">2</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Rotating</span><span class="p">(</span>
+                <span class="n">square</span><span class="p">,</span>
+                <span class="n">radians</span><span class="o">=</span><span class="n">PI</span><span class="p">,</span>
+                <span class="n">run_time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">RIGHT</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rotate">
+<h2>Rotate<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.animation.rotation.Rotate">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.animation.rotation.</code><code class="sig-name descname">Rotate</code><span class="sig-paren">(</span><em class="sig-param">mobject</em>, <em class="sig-param">angle=3.141592653589793</em>, <em class="sig-param">axis=array([0.</em>, <em class="sig-param">0.</em>, <em class="sig-param">1.])</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.animation.rotation.Rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Transform</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mobject</strong> (<a class="reference internal" href="../mobjects/mobjects.html#manimlib.mobject.mobject.Mobject" title="manimlib.mobject.mobject.Mobject"><em>Mobject</em></a>) -- TODO</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) -- Angle of rotation</p></li>
+<li><p><strong>axis</strong> (<em>3D array</em>) -- Axis of rotation</p></li>
+</ul>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;in_place&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="s2">&quot;about_point&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<video width="560" height="315" controls>
+    <source src="../../_static/RotateExample.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RotateExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">square</span><span class="o">=</span><span class="n">Square</span><span class="p">()</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Rotate</span><span class="p">(</span>
+                <span class="n">square</span><span class="p">,</span>
+                <span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span>
+                <span class="n">run_time</span><span class="o">=</span><span class="mi">2</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Rotate</span><span class="p">(</span>
+                <span class="n">square</span><span class="p">,</span>
+                <span class="n">PI</span><span class="p">,</span>
+                <span class="n">run_time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">RIGHT</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../scenes.html" class="btn btn-neutral float-right" title="Scenes (TODO)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="transform.html" class="btn btn-neutral float-left" title="Transformations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright - This document has been placed in the public domain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
