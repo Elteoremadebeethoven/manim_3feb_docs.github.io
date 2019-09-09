@@ -1,0 +1,14 @@
+source/start.rst
+source/main.py
+__pycache__/
+*.pyc
+*/*/*/__pycache__/
+*/*/*/*/__pycache__/
+*/*/*/*/*/__pycache__/
+*/*/*/*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
+.DS_Store
+build/
+media/
+media_dir.txt
