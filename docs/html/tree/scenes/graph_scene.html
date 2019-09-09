@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Graph Scene (TODO) &mdash; Manim Feb/03/2019  documentation</title>
+  <title>Graph Scene &mdash; Manim Feb/03/2019  documentation</title>
   
 
   
@@ -89,7 +89,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../animation.html">Animations</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../scenes.html">Scenes (TODO)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="scene.html">Scene (TODO)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Graph Scene (TODO)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Graph Scene</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#riemann-rectangles">Riemann rectangles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#riemann-rectangles-animation">Riemann rectangles animation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="three_d_scene.html">3D Scene (TODO)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moving_camera_scene.html">Moving camera scene (TODO)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zoomed_scene.html">Zoomed scene (TODO)</a></li>
@@ -142,7 +146,7 @@
         
           <li><a href="../scenes.html">Scenes (TODO)</a> &raquo;</li>
         
-      <li>Graph Scene (TODO)</li>
+      <li>Graph Scene</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,8 +165,172 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="graph-scene-todo">
-<h1>Graph Scene (TODO)<a class="headerlink" href="#graph-scene-todo" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="graph-scene">
+<h1>Graph Scene<a class="headerlink" href="#graph-scene" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="manimlib.scene.graph_scene.GraphScene">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.scene.graph_scene.</code><code class="sig-name descname">GraphScene</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Scene</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;x_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;x_max&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+<span class="s2">&quot;x_axis_width&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+<span class="s2">&quot;x_tick_frequency&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;x_leftmost_tick&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Change if different from x_min</span>
+<span class="s2">&quot;x_labeled_nums&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;x_axis_label&quot;</span><span class="p">:</span> <span class="s2">&quot;$x$&quot;</span><span class="p">,</span>
+<span class="s2">&quot;y_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;y_max&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+<span class="s2">&quot;y_axis_height&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+<span class="s2">&quot;y_tick_frequency&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;y_bottom_tick&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Change if different from y_min</span>
+<span class="s2">&quot;y_labeled_nums&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;y_axis_label&quot;</span><span class="p">:</span> <span class="s2">&quot;$y$&quot;</span><span class="p">,</span>
+<span class="s2">&quot;axes_color&quot;</span><span class="p">:</span> <span class="n">GREY</span><span class="p">,</span>
+<span class="s2">&quot;graph_origin&quot;</span><span class="p">:</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">DOWN</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">LEFT</span><span class="p">,</span>
+<span class="s2">&quot;exclude_zero_label&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="s2">&quot;num_graph_anchor_points&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+<span class="s2">&quot;default_graph_colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">BLUE</span><span class="p">,</span> <span class="n">GREEN</span><span class="p">,</span> <span class="n">YELLOW</span><span class="p">],</span>
+<span class="s2">&quot;default_derivative_color&quot;</span><span class="p">:</span> <span class="n">GREEN</span><span class="p">,</span>
+<span class="s2">&quot;default_input_color&quot;</span><span class="p">:</span> <span class="n">YELLOW</span><span class="p">,</span>
+<span class="s2">&quot;default_riemann_start_color&quot;</span><span class="p">:</span> <span class="n">BLUE</span><span class="p">,</span>
+<span class="s2">&quot;default_riemann_end_color&quot;</span><span class="p">:</span> <span class="n">GREEN</span><span class="p">,</span>
+<span class="s2">&quot;area_opacity&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+<span class="s2">&quot;num_rects&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="manimlib.scene.graph_scene.GraphScene.get_graph">
+<code class="sig-name descname">get_graph</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">color=None</em>, <em class="sig-param">x_min=None</em>, <em class="sig-param">x_max=None</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_graph" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>Function</em>) -- This function must be continuous</p></li>
+<li><p><strong>color</strong> (<em>Hexadecimal color</em>) -- Color</p></li>
+<li><p><strong>x_min</strong> (<em>float</em>) -- TODO</p></li>
+<li><p><strong>x_max</strong> (<em>float</em>) -- TODO</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles">
+<code class="sig-name descname">get_riemann_rectangles</code><span class="sig-paren">(</span><em class="sig-param">graph</em>, <em class="sig-param">x_min=None</em>, <em class="sig-param">x_max=None</em>, <em class="sig-param">dx=0.1</em>, <em class="sig-param">input_sample_type='left'</em>, <em class="sig-param">stroke_width=1</em>, <em class="sig-param">stroke_color='#000000'</em>, <em class="sig-param">fill_opacity=1</em>, <em class="sig-param">start_color=None</em>, <em class="sig-param">end_color=None</em>, <em class="sig-param">show_signed_area=True</em>, <em class="sig-param">width_scale_factor=1.001</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Riemman rectangles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>VMobject</em>) -- Graph from <code class="docutils literal notranslate"><span class="pre">get_graph</span></code></p></li>
+<li><p><strong>x_min</strong> (<em>float</em>) -- TODO</p></li>
+<li><p><strong>x_max</strong> (<em>float</em>) -- TODO</p></li>
+<li><p><strong>dx</strong> (<em>float</em>) -- TODO</p></li>
+<li><p><strong>input_sample_type</strong> (<em>str</em>) -- Can be <code class="docutils literal notranslate"><span class="pre">&quot;left&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;center&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles_list">
+<code class="sig-name descname">get_riemann_rectangles_list</code><span class="sig-paren">(</span><em class="sig-param">graph</em>, <em class="sig-param">n_iterations</em>, <em class="sig-param">max_dx=0.5</em>, <em class="sig-param">power_base=2</em>, <em class="sig-param">stroke_width=1</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles_list" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>VMobject</em>) -- Graph from <code class="docutils literal notranslate"><span class="pre">get_graph</span></code></p></li>
+<li><p><strong>n_iterations</strong> (<em>int</em>) -- TODO</p></li>
+<li><p><strong>max_dx</strong> (<em>float</em>) -- TODO</p></li>
+<li><p><strong>power_base</strong> (<em>int</em>) -- TODO</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.graph_scene.GraphScene.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is meant to be implement by any scenes which
+are comonly subclassed, and have some common setup
+involved before the construct method is called.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="riemann-rectangles">
+<h2>Riemann rectangles<a class="headerlink" href="#riemann-rectangles" title="Permalink to this headline">¶</a></h2>
+<img src="../../_static/RiemannRectangles.png" alt="Riemann rectangles" style="width:560px;height:315px;"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RiemannRectangles</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="s2">&quot;y_axis_height&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
+
+        <span class="n">graph</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">x_min</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">x_max</span><span class="o">=</span><span class="mf">9.2</span><span class="p">)</span>
+        <span class="n">riemann_rectangles</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_riemann_rectangles</span><span class="p">(</span>
+                                    <span class="n">graph</span><span class="p">,</span>
+                                    <span class="n">x_min</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                    <span class="n">x_max</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+                                    <span class="n">dx</span><span class="o">=</span><span class="mf">0.5</span>
+                                    <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="n">riemann_rectangles</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="riemann-rectangles-animation">
+<h2>Riemann rectangles animation<a class="headerlink" href="#riemann-rectangles-animation" title="Permalink to this headline">¶</a></h2>
+<video width="560" height="315" controls>
+    <source src="../../_static/RiemannRectanglesAnimation.mp4" type="video/mp4">
+</video><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RiemannRectanglesAnimation</span><span class="p">(</span><span class="n">GraphScene</span><span class="p">):</span>
+    <span class="n">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;y_max&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="s2">&quot;y_axis_height&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;init_dx&quot;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_axes</span><span class="p">()</span>
+        <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
+
+        <span class="n">graph</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">x_min</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">x_max</span><span class="o">=</span><span class="mf">9.2</span><span class="p">)</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;x_min&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;x_max&quot;</span> <span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="s2">&quot;fill_opacity&quot;</span> <span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+            <span class="s2">&quot;stroke_width&quot;</span> <span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">flat_rectangles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_riemann_rectangles</span><span class="p">(</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">0</span><span class="p">),</span>
+                                <span class="n">dx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">init_dx</span><span class="p">,</span>
+                                <span class="n">start_color</span><span class="o">=</span><span class="n">invert_color</span><span class="p">(</span><span class="n">PURPLE</span><span class="p">),</span>
+                                <span class="n">end_color</span><span class="o">=</span><span class="n">invert_color</span><span class="p">(</span><span class="n">ORANGE</span><span class="p">),</span>
+                                <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="n">riemann_rectangles_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_riemann_rectangles_list</span><span class="p">(</span>
+                                <span class="n">graph</span><span class="p">,</span>
+                                <span class="mi">6</span><span class="p">,</span>
+                                <span class="n">max_dx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">init_dx</span><span class="p">,</span>
+                                <span class="n">power_base</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                <span class="n">start_color</span><span class="o">=</span><span class="n">PURPLE</span><span class="p">,</span>
+                                <span class="n">end_color</span><span class="o">=</span><span class="n">ORANGE</span><span class="p">,</span>
+                                 <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="c1"># Show Riemann rectangles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">flat_rectangles</span><span class="p">,</span><span class="n">riemann_rectangles_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">riemann_rectangles_list</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transform_between_riemann_rects</span><span class="p">(</span>
+                    <span class="n">riemann_rectangles_list</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="n">riemann_rectangles_list</span><span class="p">[</span><span class="n">r</span><span class="p">],</span>
+                    <span class="n">replace_mobject_with_target_in_scene</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span>
+                <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

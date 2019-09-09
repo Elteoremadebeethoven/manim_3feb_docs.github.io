@@ -26,6 +26,41 @@ from manimlib.utils.space_ops import angle_of_vector
 
 
 class GraphScene(Scene):
+    """
+    Type: ``Scene``
+
+
+
+    ``CONFIG`` parameters
+
+    ::
+
+        "x_min": -1,
+        "x_max": 10,
+        "x_axis_width": 9,
+        "x_tick_frequency": 1,
+        "x_leftmost_tick": None,  # Change if different from x_min
+        "x_labeled_nums": None,
+        "x_axis_label": "$x$",
+        "y_min": -1,
+        "y_max": 10,
+        "y_axis_height": 6,
+        "y_tick_frequency": 1,
+        "y_bottom_tick": None,  # Change if different from y_min
+        "y_labeled_nums": None,
+        "y_axis_label": "$y$",
+        "axes_color": GREY,
+        "graph_origin": 2.5 * DOWN + 4 * LEFT,
+        "exclude_zero_label": True,
+        "num_graph_anchor_points": 25,
+        "default_graph_colors": [BLUE, GREEN, YELLOW],
+        "default_derivative_color": GREEN,
+        "default_input_color": YELLOW,
+        "default_riemann_start_color": BLUE,
+        "default_riemann_end_color": GREEN,
+        "area_opacity": 0.8,
+        "num_rects": 50,
+    """
     CONFIG = {
         "x_min": -1,
         "x_max": 10,
@@ -150,6 +185,19 @@ class GraphScene(Scene):
         x_min=None,
         x_max=None,
     ):
+        """
+        Parameters
+        ----------
+        func : Function
+            This function must be continuous
+        color : Hexadecimal color
+            Color
+        x_min : float
+            TODO
+        x_max : float
+            TODO
+
+        """
         if color is None:
             color = next(self.default_graph_colors_cycle)
         if x_min is None:
@@ -233,6 +281,22 @@ class GraphScene(Scene):
         show_signed_area=True,
         width_scale_factor=1.001
     ):
+        """
+        Riemman rectangles.
+
+        Parameters
+        ----------
+        graph : VMobject
+            Graph from ``get_graph``
+        x_min : float
+            TODO
+        x_max : float
+            TODO
+        dx : float
+            TODO
+        input_sample_type : str
+            Can be ``"left"``, ``"center"``, ``"right"``
+        """
         x_min = x_min if x_min is not None else self.x_min
         x_max = x_max if x_max is not None else self.x_max
         if start_color is None:
@@ -278,6 +342,18 @@ class GraphScene(Scene):
         stroke_width=1,
         **kwargs
     ):
+        """
+        Parameters
+        ----------
+        graph : VMobject
+            Graph from ``get_graph``
+        n_iterations : int
+            TODO
+        max_dx : float
+            TODO
+        power_base : int
+            TODO
+        """
         return [
             self.get_riemann_rectangles(
                 graph=graph,
@@ -359,16 +435,6 @@ class GraphScene(Scene):
         secant_line_color=None,
         secant_line_length=10,
     ):
-        """
-        Resulting group is of the form VGroup(
-            dx_line,
-            df_line,
-            dx_label, (if applicable)
-            df_label, (if applicable)
-            secant_line, (if applicable)
-        )
-        with attributes of those names.
-        """
         kwargs = locals()
         kwargs.pop("self")
         group = VGroup()
