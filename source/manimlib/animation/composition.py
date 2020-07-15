@@ -31,13 +31,6 @@ class Succession(Animation):
         Each arg will either be an animation, or an animation class
         followed by its arguments (and potentially a dict for
         configuration).
-        For example,
-        Succession(
-            ShowCreation(circle),
-            Transform, circle, square,
-            Transform, circle, triangle,
-            ApplyMethod, circle.shift, 2*UP, {"run_time" : 2},
-        )
         """
         animations = []
         state = {

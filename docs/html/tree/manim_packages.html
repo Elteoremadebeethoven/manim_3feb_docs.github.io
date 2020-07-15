@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -292,87 +292,87 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 
-<span class="kn">from</span> <span class="nn">manimlib.constants</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.constants</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">manimlib.animation.animation</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.composition</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.creation</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.indication</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.movement</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.numbers</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.rotation</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.specialized</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.transform</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.animation.update</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.animation</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.composition</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.creation</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.indication</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.movement</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.numbers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.rotation</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.specialized</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.transform</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.animation.update</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">manimlib.camera.camera</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.camera.mapping_camera</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.camera.moving_camera</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.camera.three_d_camera</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.camera.camera</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.camera.mapping_camera</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.camera.moving_camera</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.camera.three_d_camera</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">manimlib.continual_animation.continual_animation</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.continual_animation.from_animation</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.continual_animation.numbers</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.continual_animation.update</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.continual_animation.continual_animation</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.continual_animation.from_animation</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.continual_animation.numbers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.continual_animation.update</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">manimlib.mobject.coordinate_systems</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.frame</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.functions</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.geometry</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.matrix</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.mobject</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.number_line</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.numbers</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.probability</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.shape_matchers</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.svg.brace</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.svg.drawings</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.svg.svg_mobject</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.svg.tex_mobject</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.three_d_utils</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.three_dimensions</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.types.image_mobject</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.types.point_cloud_mobject</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.types.vectorized_mobject</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.updater</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.mobject.value_tracker</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.coordinate_systems</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.frame</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.geometry</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.matrix</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.mobject</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.number_line</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.numbers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.probability</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.shape_matchers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.svg.brace</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.svg.drawings</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.svg.svg_mobject</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.svg.tex_mobject</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.three_d_utils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.three_dimensions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.types.image_mobject</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.types.point_cloud_mobject</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.types.vectorized_mobject</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.updater</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.mobject.value_tracker</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">manimlib.for_3b1b_videos.common_scenes</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.for_3b1b_videos.pi_creature</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.for_3b1b_videos.pi_creature_animations</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.for_3b1b_videos.pi_creature_scene</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.for_3b1b_videos.common_scenes</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.for_3b1b_videos.pi_creature</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.for_3b1b_videos.pi_creature_animations</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.for_3b1b_videos.pi_creature_scene</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.arithmetic</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.combinatorics</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.complex_transformation_scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.counting</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.fractals</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.graph_theory</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.light</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.arithmetic</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.combinatorics</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.complex_transformation_scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.counting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.fractals</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.graph_theory</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.once_useful_constructs.light</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">manimlib.scene.graph_scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.moving_camera_scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.reconfigurable_scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.sample_space_scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.graph_scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.scene_from_video</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.three_d_scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.vector_space_scene</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.scene.zoomed_scene</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.graph_scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.moving_camera_scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.reconfigurable_scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.sample_space_scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.graph_scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.scene_from_video</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.three_d_scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.vector_space_scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.scene.zoomed_scene</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">manimlib.utils.bezier</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.color</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.config_ops</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.images</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.iterables</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.file_ops</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.paths</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.rate_functions</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.simple_functions</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.sounds</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.space_ops</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">manimlib.utils.strings</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.bezier</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.color</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.config_ops</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.images</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.iterables</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.file_ops</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.paths</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.rate_functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.simple_functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.sounds</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.space_ops</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manimlib.utils.strings</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Non manim libraries that are also nice to have without thinking</span>
 
@@ -387,8 +387,8 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">math</span>
 
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
-<span class="kn">from</span> <span class="nn">colour</span> <span class="k">import</span> <span class="n">Color</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">Color</span>
 </pre></div>
 </td></tr></table></div>
 </div>

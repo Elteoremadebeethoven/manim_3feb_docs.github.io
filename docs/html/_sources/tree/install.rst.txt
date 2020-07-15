@@ -8,7 +8,7 @@ Windows
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="http://www.youtube.com/embed/ZltiKHFWmv8?rel=0" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZltiKHFWmv8?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
 MacOS
@@ -16,7 +16,7 @@ MacOS
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="http://www.youtube.com/embed/uZj_GQc6pN4?rel=0" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/uZj_GQc6pN4?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
 GNU/Linux
@@ -24,7 +24,7 @@ GNU/Linux
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="http://www.youtube.com/embed/z_WJaHYH66M?rel=0" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/z_WJaHYH66M?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
 ..

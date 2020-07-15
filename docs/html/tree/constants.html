@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -214,7 +214,7 @@
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">MEDIA_DIR</span><span class="p">):</span>
     <span class="n">MEDIA_DIR</span> <span class="o">=</span> <span class="s2">&quot;media&quot;</span>
     <span class="nb">print</span><span class="p">(</span>
-        <span class="n">f</span><span class="s2">&quot;Media will be stored in {MEDIA_DIR + os.sep}. You can change &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Media will be stored in </span><span class="si">{</span><span class="n">MEDIA_DIR</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="si">}</span><span class="s2">. You can change &quot;</span>
         <span class="s2">&quot;this behavior by writing a different directory to media_dir.txt.&quot;</span>
     <span class="p">)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;media_dir.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">media_file</span><span class="p">:</span>

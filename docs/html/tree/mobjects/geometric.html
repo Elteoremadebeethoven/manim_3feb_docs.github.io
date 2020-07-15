@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -205,9 +205,9 @@
 <h2>Arc types<a class="headerlink" href="#arc-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="arc">
 <h3>Arc<a class="headerlink" href="#arc" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Arc">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Arc</code><span class="sig-paren">(</span><em class="sig-param">angle</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Arc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -220,13 +220,13 @@
 <span class="s2">&quot;arc_center&quot;</span><span class="p">:</span> <span class="n">ORIGIN</span><span class="p">,</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Arc.add_tip">
-<code class="sig-name descname">add_tip</code><span class="sig-paren">(</span><em class="sig-param">tip_length=0.25</em>, <em class="sig-param">at_start=False</em>, <em class="sig-param">at_end=True</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.add_tip" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_tip</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tip_length</span><span class="o">=</span><span class="default_value">0.25</span></em>, <em class="sig-param"><span class="n">at_start</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">at_end</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.add_tip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add tip</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Arc.get_arc_center">
 <code class="sig-name descname">get_arc_center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.get_arc_center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get arc center</p>
@@ -240,9 +240,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Arc.move_arc_center_to">
-<code class="sig-name descname">move_arc_center_to</code><span class="sig-paren">(</span><em class="sig-param">point</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.move_arc_center_to" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">move_arc_center_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arc.move_arc_center_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Move arc center to point</p>
 </dd></dl>
 
@@ -251,9 +251,9 @@
 </div>
 <div class="section" id="arcbetweenpoints">
 <h3>ArcBetweenPoints<a class="headerlink" href="#arcbetweenpoints" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.ArcBetweenPoints">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">ArcBetweenPoints</code><span class="sig-paren">(</span><em class="sig-param">start_point</em>, <em class="sig-param">end_point</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.ArcBetweenPoints" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">ArcBetweenPoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_point</span></em>, <em class="sig-param"><span class="n">end_point</span></em>, <em class="sig-param"><span class="n">angle</span><span class="o">=</span><span class="default_value">1.5707963267948966</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.ArcBetweenPoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Arc</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -269,9 +269,9 @@
 </div>
 <div class="section" id="curvedarrow">
 <h3>CurvedArrow<a class="headerlink" href="#curvedarrow" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.CurvedArrow">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CurvedArrow</code><span class="sig-paren">(</span><em class="sig-param">start_point</em>, <em class="sig-param">end_point</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CurvedArrow" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CurvedArrow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_point</span></em>, <em class="sig-param"><span class="n">end_point</span></em>, <em class="sig-param"><span class="n">angle</span><span class="o">=</span><span class="default_value">1.5707963267948966</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CurvedArrow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">ArcBetweenPoints</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters: The same as <code class="docutils literal notranslate"><span class="pre">ArcBetweenPoints</span></code></p>
 </dd></dl>
@@ -279,9 +279,9 @@
 </div>
 <div class="section" id="curveddoublearrow">
 <h3>CurvedDoubleArrow<a class="headerlink" href="#curveddoublearrow" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.CurvedDoubleArrow">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CurvedDoubleArrow</code><span class="sig-paren">(</span><em class="sig-param">start_point</em>, <em class="sig-param">end_point</em>, <em class="sig-param">angle=1.5707963267948966</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CurvedDoubleArrow" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CurvedDoubleArrow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_point</span></em>, <em class="sig-param"><span class="n">end_point</span></em>, <em class="sig-param"><span class="n">angle</span><span class="o">=</span><span class="default_value">1.5707963267948966</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CurvedDoubleArrow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">ArcBetweenPoints</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters: The same as <code class="docutils literal notranslate"><span class="pre">ArcBetweenPoints</span></code></p>
 </dd></dl>
@@ -289,17 +289,17 @@
 </div>
 <div class="section" id="circle">
 <h3>Circle<a class="headerlink" href="#circle" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Circle">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Circle</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Circle" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Arc</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">RED</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Circle.get_point_from_angle">
-<code class="sig-name descname">get_point_from_angle</code><span class="sig-paren">(</span><em class="sig-param">angle</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Circle.get_point_from_angle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_point_from_angle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Circle.get_point_from_angle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get point from angle</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -316,9 +316,9 @@
 </div>
 <div class="section" id="dot">
 <h3>Dot<a class="headerlink" href="#dot" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Dot">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Dot</code><span class="sig-paren">(</span><em class="sig-param">point=array([0.</em>, <em class="sig-param">0.</em>, <em class="sig-param">0.])</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Dot" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">array([0.0, 0.0, 0.0])</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Dot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Circle</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -337,9 +337,9 @@
 </div>
 <div class="section" id="ellipse">
 <h3>Ellipse<a class="headerlink" href="#ellipse" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Ellipse">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Ellipse</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Ellipse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Ellipse</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">submobjects</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Ellipse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -351,9 +351,9 @@
 </div>
 <div class="section" id="annularsector">
 <h3>AnnularSector<a class="headerlink" href="#annularsector" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.AnnularSector">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">AnnularSector</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">AnnularSector</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">submobjects</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;inner_radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -365,15 +365,15 @@
 <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span><span class="p">,</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.AnnularSector.get_arc_center">
 <code class="sig-name descname">get_arc_center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector.get_arc_center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get arc center</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.AnnularSector.move_arc_center_to">
-<code class="sig-name descname">move_arc_center_to</code><span class="sig-paren">(</span><em class="sig-param">point</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector.move_arc_center_to" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">move_arc_center_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.AnnularSector.move_arc_center_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Move arc center to point</p>
 </dd></dl>
 
@@ -382,9 +382,9 @@
 </div>
 <div class="section" id="sector">
 <h3>Sector<a class="headerlink" href="#sector" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Sector">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Sector</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Sector" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Sector</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">submobjects</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Sector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">AnnularSector</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;outer_radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -396,9 +396,9 @@
 </div>
 <div class="section" id="annulus">
 <h3>Annulus<a class="headerlink" href="#annulus" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Annulus">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Annulus</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Annulus" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Annulus</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Annulus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Circle</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;inner_radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -416,9 +416,9 @@
 <h2>Line types<a class="headerlink" href="#line-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="line">
 <h3>Line<a class="headerlink" href="#line" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Line">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Line</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -431,7 +431,7 @@
 <span class="s2">&quot;n_arc_anchors&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1"># Only used if path_arc is not None</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.get_angle">
 <code class="sig-name descname">get_angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_angle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get angle taking the horizontal as a reference</p>
@@ -445,7 +445,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.get_arc_length">
 <code class="sig-name descname">get_arc_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_arc_length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get arc length</p>
@@ -463,7 +463,7 @@
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.get_end">
 <code class="sig-name descname">get_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get end</p>
@@ -477,7 +477,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.get_length">
 <code class="sig-name descname">get_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get length</p>
@@ -491,7 +491,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.get_start">
 <code class="sig-name descname">get_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get start</p>
@@ -505,7 +505,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.get_start_and_end">
 <code class="sig-name descname">get_start_and_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_start_and_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get start and end of the line</p>
@@ -520,7 +520,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.get_unit_vector">
 <code class="sig-name descname">get_unit_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_unit_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get unit vector of the line</p>
@@ -534,7 +534,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.get_vector">
 <code class="sig-name descname">get_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.get_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get vector with the length of the line</p>
@@ -548,21 +548,21 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.put_start_and_end_on">
-<code class="sig-name descname">put_start_and_end_on</code><span class="sig-paren">(</span><em class="sig-param">new_start</em>, <em class="sig-param">new_end</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.put_start_and_end_on" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">put_start_and_end_on</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_start</span></em>, <em class="sig-param"><span class="n">new_end</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.put_start_and_end_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Put start and end on new points</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.set_angle">
-<code class="sig-name descname">set_angle</code><span class="sig-paren">(</span><em class="sig-param">angle</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.set_angle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_angle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.set_angle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set angle taking the horizontal as a reference</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Line.set_start_and_end">
-<code class="sig-name descname">set_start_and_end</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.set_start_and_end" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_start_and_end</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Line.set_start_and_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set start and end</p>
 </dd></dl>
 
@@ -571,15 +571,15 @@
 </div>
 <div class="section" id="dashedline">
 <h3>DashedLine<a class="headerlink" href="#dashedline" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.DashedLine">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">DashedLine</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DashedLine" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">DashedLine</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DashedLine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Line</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dashed_segment_length&quot;</span><span class="p">:</span> <span class="mf">0.05</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.DashedLine.get_end">
 <code class="sig-name descname">get_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DashedLine.get_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get end</p>
@@ -593,7 +593,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.DashedLine.get_start">
 <code class="sig-name descname">get_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DashedLine.get_start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get start</p>
@@ -612,9 +612,9 @@
 </div>
 <div class="section" id="elbow">
 <h3>Elbow<a class="headerlink" href="#elbow" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Elbow">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Elbow</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Elbow" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Elbow</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Elbow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
@@ -626,9 +626,9 @@
 </div>
 <div class="section" id="arrow">
 <h3>Arrow<a class="headerlink" href="#arrow" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Arrow">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Arrow</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Arrow</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Line</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;tip_length&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
@@ -643,7 +643,7 @@
 <span class="s2">&quot;rectangular_stem_width&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Arrow.get_end">
 <code class="sig-name descname">get_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.get_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get end</p>
@@ -657,7 +657,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Arrow.get_normal_vector">
 <code class="sig-name descname">get_normal_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.get_normal_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get normal vector</p>
@@ -671,7 +671,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Arrow.get_tip">
 <code class="sig-name descname">get_tip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.get_tip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get tip</p>
@@ -685,15 +685,15 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Arrow.put_start_and_end_on">
-<code class="sig-name descname">put_start_and_end_on</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.put_start_and_end_on" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">put_start_and_end_on</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.put_start_and_end_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Put start and end in new points</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Arrow.scale">
-<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param">scale_factor</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.scale" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scale_factor</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Arrow.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale without change tip size</p>
 </dd></dl>
 
@@ -702,18 +702,18 @@
 </div>
 <div class="section" id="doublearrow">
 <h3>DoubleArrow<a class="headerlink" href="#doublearrow" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.DoubleArrow">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">DoubleArrow</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DoubleArrow" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">DoubleArrow</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.DoubleArrow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Arrow</span></code></p>
 </dd></dl>
 
 </div>
 <div class="section" id="vector">
 <h3>Vector<a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Vector">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Vector</code><span class="sig-paren">(</span><em class="sig-param">direction</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Vector" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">direction</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Arrow</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -730,9 +730,9 @@
 </div>
 <div class="section" id="cubicbezier">
 <h3>CubicBezier<a class="headerlink" href="#cubicbezier" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.CubicBezier">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CubicBezier</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CubicBezier" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">CubicBezier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.CubicBezier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -747,9 +747,9 @@
 <h2>Rectangle types<a class="headerlink" href="#rectangle-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="polygon">
 <h3>Polygon<a class="headerlink" href="#polygon" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Polygon">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Polygon</code><span class="sig-paren">(</span><em class="sig-param">*vertices</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Polygon" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Polygon</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">vertices</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Polygon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -762,7 +762,7 @@
 <span class="s2">&quot;close_new_points&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.mobject.geometry.Polygon.get_vertices">
 <code class="sig-name descname">get_vertices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Polygon.get_vertices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get vertices</p>
@@ -781,9 +781,9 @@
 </div>
 <div class="section" id="regularpolygon">
 <h3>RegularPolygon<a class="headerlink" href="#regularpolygon" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.RegularPolygon">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">RegularPolygon</code><span class="sig-paren">(</span><em class="sig-param">n=3</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.RegularPolygon" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">RegularPolygon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.RegularPolygon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Polygon</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -799,9 +799,9 @@
 </div>
 <div class="section" id="rectangle">
 <h3>Rectangle<a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Rectangle">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Rectangle</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Rectangle" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Rectangle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">submobjects</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Rectangle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">WHITE</span><span class="p">,</span>
@@ -816,9 +816,9 @@
 </div>
 <div class="section" id="roundedrectangle">
 <h3>RoundedRectangle<a class="headerlink" href="#roundedrectangle" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.RoundedRectangle">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">RoundedRectangle</code><span class="sig-paren">(</span><em class="sig-param">*submobjects</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.RoundedRectangle" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">RoundedRectangle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">submobjects</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.RoundedRectangle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;corner_radius&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
@@ -830,9 +830,9 @@
 </div>
 <div class="section" id="grid">
 <h3>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.mobject.geometry.Grid">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Grid</code><span class="sig-paren">(</span><em class="sig-param">rows</em>, <em class="sig-param">columns</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Grid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.mobject.geometry.</code><code class="sig-name descname">Grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">columns</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.mobject.geometry.Grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">VMobject</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

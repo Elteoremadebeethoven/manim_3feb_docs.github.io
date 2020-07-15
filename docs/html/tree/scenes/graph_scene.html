@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -167,9 +167,9 @@
             
   <div class="section" id="graph-scene">
 <h1>Graph Scene<a class="headerlink" href="#graph-scene" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="manimlib.scene.graph_scene.GraphScene">
-<em class="property">class </em><code class="sig-prename descclassname">manimlib.scene.graph_scene.</code><code class="sig-name descname">GraphScene</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.scene.graph_scene.</code><code class="sig-name descname">GraphScene</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type: <code class="docutils literal notranslate"><span class="pre">Scene</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;x_min&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
@@ -199,9 +199,9 @@
 <span class="s2">&quot;num_rects&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.scene.graph_scene.GraphScene.get_graph">
-<code class="sig-name descname">get_graph</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">color=None</em>, <em class="sig-param">x_min=None</em>, <em class="sig-param">x_max=None</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_min</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_max</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_graph" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -214,9 +214,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles">
-<code class="sig-name descname">get_riemann_rectangles</code><span class="sig-paren">(</span><em class="sig-param">graph</em>, <em class="sig-param">x_min=None</em>, <em class="sig-param">x_max=None</em>, <em class="sig-param">dx=0.1</em>, <em class="sig-param">input_sample_type='left'</em>, <em class="sig-param">stroke_width=1</em>, <em class="sig-param">stroke_color='#000000'</em>, <em class="sig-param">fill_opacity=1</em>, <em class="sig-param">start_color=None</em>, <em class="sig-param">end_color=None</em>, <em class="sig-param">show_signed_area=True</em>, <em class="sig-param">width_scale_factor=1.001</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_riemann_rectangles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">x_min</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_max</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dx</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">input_sample_type</span><span class="o">=</span><span class="default_value">'left'</span></em>, <em class="sig-param"><span class="n">stroke_width</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">stroke_color</span><span class="o">=</span><span class="default_value">'#000000'</span></em>, <em class="sig-param"><span class="n">fill_opacity</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">start_color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_signed_area</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">width_scale_factor</span><span class="o">=</span><span class="default_value">1.001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Riemman rectangles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -231,9 +231,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles_list">
-<code class="sig-name descname">get_riemann_rectangles_list</code><span class="sig-paren">(</span><em class="sig-param">graph</em>, <em class="sig-param">n_iterations</em>, <em class="sig-param">max_dx=0.5</em>, <em class="sig-param">power_base=2</em>, <em class="sig-param">stroke_width=1</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_riemann_rectangles_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">n_iterations</span></em>, <em class="sig-param"><span class="n">max_dx</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">power_base</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">stroke_width</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_riemann_rectangles_list" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -246,7 +246,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="manimlib.scene.graph_scene.GraphScene.setup">
 <code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is meant to be implement by any scenes which
@@ -325,7 +325,7 @@ involved before the construct method is called.</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">transform_between_riemann_rects</span><span class="p">(</span>
                     <span class="n">riemann_rectangles_list</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
                     <span class="n">riemann_rectangles_list</span><span class="p">[</span><span class="n">r</span><span class="p">],</span>
-                    <span class="n">replace_mobject_with_target_in_scene</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span>
+                    <span class="n">replace_mobject_with_target_in_scene</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
                 <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 </pre></div>
